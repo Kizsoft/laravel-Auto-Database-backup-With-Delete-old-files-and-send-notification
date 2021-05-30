@@ -47,7 +47,7 @@ class BackupDatabase extends Command {
             //path directory to store the file
             $storePath = storage_path() . '/app/backup';
             //filename , name of the file 
-            $filename = 'backup' . Carbon::now()->format('Y_m-d') . '.sql';
+            $filename = 'backup' . Carbon::now()->format('Y-m-d') . '.sql';
 
             //check if the path directory exist and skip if not create it before procceeding
             if (!is_dir(dirname($storePath))) {
