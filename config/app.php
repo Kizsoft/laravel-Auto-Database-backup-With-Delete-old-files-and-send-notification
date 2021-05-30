@@ -55,6 +55,11 @@ return [
     'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
+    //database details needed to use for the backup access
+    'db_username' => env('DB_USERNAME'),
+    'db_password' => env('DB_PASSWORD'),
+    'db_host' => env('DB_HOST'),
+    'db_database' => env('DB_DATABASE'),
 
     /*
     |--------------------------------------------------------------------------

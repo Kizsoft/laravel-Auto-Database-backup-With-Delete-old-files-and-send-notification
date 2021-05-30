@@ -4,7 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-
+use App\Console\Commands\BackupDatabase;
 class Kernel extends ConsoleKernel
 {
     /**
@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        //adding the backup to laravel schedule
+        BackupDatabase::class
     ];
 
     /**
@@ -24,7 +25,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        //depends on your need 
+         $schedule->command('backup:db')->daily();
+         //go to your cpanel, cron job and add this command
+//         /usr/local/bin/php /home/hostusername/root folder/artisan schedule:run >> /dev/null 2>&1
     }
 
     /**
